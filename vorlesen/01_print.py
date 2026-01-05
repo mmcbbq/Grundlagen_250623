@@ -48,3 +48,4 @@ print("Welt")
 
 print("Hallo", end="Ende der Zeile")
 print("Welt", end="Ende der Zeile")
+
