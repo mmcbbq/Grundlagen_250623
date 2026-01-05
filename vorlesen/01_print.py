@@ -4,6 +4,9 @@
 # Um eine Funktion zu benutzen, muss man sie aufrufen oder function call oder function invocation
 # Man schreibt den funktionsnamen gefolgt von Klammer auf klammer zu "()"
 print()
+
+
+
 # Zwischen den Klammern kann man nun Argumente übergeben.
 
 print('Hello World!')
