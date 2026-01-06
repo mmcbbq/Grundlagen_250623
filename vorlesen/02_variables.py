@@ -20,7 +20,6 @@ testNummer = 100  # kann man machen
 test_nummer = "test"  # sollte man machen
 print(test)
 
-# Vor dem Aufrufen müssen Variablen definiert werden
 # print(aufruf) # erzeugt einen error
 aufruf = "falsch"
 # Man kann beliebig viele Variablen erstellen
@@ -28,6 +27,7 @@ name1 = "Bob"
 name2 = "Jones"
 name3 = "Jim"
 print(name1)
+# Vor dem Aufrufen müssen Variablen definiert werden
 
 # Variablen kann man überschreiben
 name = "Tim"
@@ -74,5 +74,5 @@ b = a ^ b  # b = (a^b) ^ b = a_vorher
 a = a ^ b  # a = (a^b) ^ a = b_vorher
 print(a, b)
 # In Python kann man dies aber auch wie folgt lösen
-a, b = b, a
+
 print(a, b)
