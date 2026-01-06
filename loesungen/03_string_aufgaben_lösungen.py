@@ -2,8 +2,10 @@
 my_var = "Hallo Welt"
 # Erstelle eine Variable erster und weise ihr den Ersten Buchstaben des Strings my_var zu
 erster = my_var[0]
+print(erster)
 # Erstelle eine Variable letzter und weise ihr den letzten Buchstaben des Strings my_var zu
-letzter = my_var[-1]
+letzter = my_var[9]
+print(letzter)
 # Schneide aus dem String in my_var das Wort Hallo aus und weise es der Variable hallo zu.
 hallo = my_var[:5]
 print(hallo)
@@ -11,14 +13,19 @@ print(hallo)
 welt = my_var[-4:]
 print(welt)
 # # Tausche den Wert der Variablen hallo und welt
-# zwischen = hallo
-# hallo = welt
-# welt = zwischen
+zwischen = hallo
+hallo = welt
+welt = zwischen
 
 hallo, welt = welt, hallo
 
 a = "abcdefghijklmnopqrstuvwxyz "
-
+# start = 0
+# end = len(a) * -1
+# for i in a:
+#     print(f'{i} index {start} ne_index {end}')
+#     start += 1
+#     end += 1
 # Erstelle eine Variable name und weise ihr den Vor- und Nachnamen bob studehi zu.
 
 # Benutze dafür nur die Buchstaben aus der Variable alphabet
