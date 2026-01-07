@@ -1,5 +1,5 @@
 {
-	"Dhcp5":{
+	"Dhcp4":{
 		"interfaces-config":{
 		"interfaces":["eth1"]
 		},
