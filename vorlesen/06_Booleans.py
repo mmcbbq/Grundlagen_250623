@@ -35,7 +35,7 @@ print(-15 < -10)  # True
 print(">")
 print('----------------------------------------')
 print(15 > 15)  # False
-print(15 > 20)  # Fasle
+print(15 > 20)  # False
 print(15 > 10)  # True
 print(-15 > -20)  # True
 print(-15 > -10)  # False
@@ -93,6 +93,10 @@ print('xor')
 print('True xor True:', True ^ True)
 print('True xor False:', True ^ False)
 print('False xor False:', False ^ False)
+
+print('and vor or')
+print("True or False and False", True or False and False)
+
 
 # xor kann man logisch aus den anderen Operatoren zusammen setzten
 print('xor aus and und or')

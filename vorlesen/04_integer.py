@@ -33,7 +33,7 @@ c = 3
 print(b ** c)
 # bei der exponential Rechnung von Rechtspotenz nach links
 # Möglichkeit 1. 2 ** 2 -> 4 -> 4 ** 4 -> 64 links nach rechts FALSCH
-# Möglichkeit 2. 2 ** 3 -> 8 -> 2 ** 8 -> 265 rechts nach links RICHTIG
+# Möglichkeit 2. 2 ** 3 -> 8 -> 2 ** 8 -> 256 rechts nach links RICHTIG
 print(2 ** 2 ** 3)
 
 # Zur Wurzel berechnung entweder über das Importieren der Math
