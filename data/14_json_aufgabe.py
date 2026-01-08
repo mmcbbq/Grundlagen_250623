@@ -10,9 +10,9 @@
 # Teil 2: Modifikation des ersten Subnetzes
 # Netzwerk: Ändere das Subnetz des ersten Eintrags auf 10.101.101.0/24.
 #
-# Adress-Pools: Passe die pools so an, dass sie innerhalb des neuen Subnetzes liegen (z. B. .10 bis .100).
+# Address-Pools: Passe die pools so an, dass sie innerhalb des neuen Subnetzes liegen (z. B. .10 bis .100).
 #
-# Schnittstelle: Ändere den Wert für interface innerhalb dieses Subnetzes auf eth4.
+#
 #
 # Standard-Optionen: * Ändere die IP-Adresse des routers und der domain-name-servers passend zum neuen Subnetz.
 #
@@ -21,6 +21,7 @@
 # Bereinigung: Entferne den gesamten Konfigurationsblock "dhcp-ddns".
 #
 # Teil 3: Erweiterung und Global-Settings
+
 # Neues Subnetz anlegen: Füge ein zweites Subnetz-Objekt mit folgenden Daten hinzu:
 #
 # id: 2
@@ -29,8 +30,8 @@
 #
 # pools: 192.168.0.10 - 192.168.0.100
 #
-# Interface-Binding: * Passe das globale interfaces-config Array so an, dass es auf ["eth0", "eth1"] lauscht.
+# Interface-Binding: * Passe das globale interfaces-config Array so an, dass es auf ["eth1", "eth2"] lauscht.
 #
-# Stelle sicher, dass Subnetz 1 explizit an eth0 gebunden ist.   key value pair "interface" : eht0
+# Stelle sicher, dass Subnetz 1 (10.101) explizit an eth1 gebunden ist.   key value pair "interface" : eht0
 #
-# Stelle sicher, dass Subnetz 2 explizit an eth1 gebunden ist. key value pair "interface" : eht1
+# Stelle sicher, dass Subnetz 2 (192.168) explizit an eth2 gebunden ist. key value pair "interface" : eht1
