@@ -3,7 +3,8 @@ alter = int(input("Wie alt bist du?"))  # Zeigt den string "Wie alt bist du" in 
 #
 # Überprüfen ob der User mindestens 18 ist
 if alter >= 18:  # Wenn der Wert der Varaible alter größer gleich 18 ist
-    print("Hallo")  # Dann sag Hallo. Der ganze Code Block der eingerückt ist wird ausgeführt
+    print("Hallo")
+    # Dann sag Hallo. Der ganze Code Block der eingerückt ist wird ausgeführt
 elif alter >= 16:  # ansonsten wenn. Eine weitere Überprüfung die ausgeführt wird wenn die Bedingung True ist
     print('Hallo du brauchst eine Begleitung')
 # Es wird immer nur der Code einer Bedingung Ausgeführt

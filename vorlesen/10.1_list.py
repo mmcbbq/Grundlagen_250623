@@ -66,7 +66,7 @@ print(my_list)
 print(my_list)
 my_list.clear()  # -> löscht den Inhalt der Liste
 print(my_list)
-
+# del my_list
 my_list = [50, 50.55, 'string', True]
 
 my_list[0], my_list[-1] = my_list[-1], my_list[0]

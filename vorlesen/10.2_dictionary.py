@@ -11,7 +11,7 @@ print("constructor")
 con_dic = dict()
 print(type(con_dic))
 
-my_dic = {"string": "wert", "int": 50, "float": 10.2, "bool": True}
+my_dic = {"string": "wert", "int": 50, "float": 10.2, "bool": True, 1: 12}
 # Auswahl von Items
 print("Auswahl")
 print(my_dic['string'])
@@ -73,10 +73,7 @@ my_dic.clear()
 print('leeren des dic mit clear')
 print(my_dic)
 
-
-
 my_dic = {"string": "wert", "int": 50, "float": 10.2, "bool": True}
-
 
 print('-------------my_dic = my_dic2')
 my_dic2 = my_dic
@@ -87,7 +84,6 @@ print(my_dic2)
 
 my_dic.clear()
 
-
 print('nach mydic.clear')
 print('my_dic')
 print(my_dic)
@@ -97,7 +93,6 @@ print(my_dic2)
 print('-------------copy------------------------------------')
 my_dic = {"string": "wert", "int": 50, "float": 10.2, "bool": True}
 
-
 my_dic2 = my_dic.copy()
 print('my_dic')
 print(my_dic)
@@ -106,12 +101,8 @@ print(my_dic2)
 
 my_dic.clear()
 
-
 print('nach mydic.clear')
 print('my_dic')
 print(my_dic)
 print('copy')
 print(my_dic2)
-
-
-
