@@ -26,7 +26,7 @@
 # 1['o', 'o', 'o']
 # 2['x', 'x', 'o']
 # 3['o', 'x', 	'o']
-#    a    b    c
+#    1   2   3
 # Beispiel Zahl1 = 3 Zahl2 = 2 Buchstabe = p
 # 1['o', 'o', 'o']
 # 2['x', 'x', 'p']
