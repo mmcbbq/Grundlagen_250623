@@ -30,7 +30,8 @@ print(tic[2])
 # ['x', 'x', 'o']
 # ['o', 'x', 'o']
 print('------------------------------')
-tic[0][1], tic[0][2] = 'o', 'o'
+tic[0][1] = 'o'
+tic[0][2] = 'o'
 tic[1][0], tic[1][-1] = 'x', 'o'
 tic[2][0], tic[2][1], tic[2][2] = 'o', 'x', 'o'
 print(tic[0])
@@ -48,14 +49,35 @@ print(tic[2])
 # schriebe ein Programm das 2 Zahlen zwischen 1 und 3 und einem Buchstaben vom user fordert
 # Anschliessend soll der Wert mit der Pos der zwei Zahlen mit den Buchstaben überschrieben werden
 # und die Liste wie in der vorherigen Aufgabe ausgegeben werden
- #y
-# 1['o', 'o', 'o']
-# 2['x', 'x', 'o']
-# 3['o', 'x', 'o']
+# y
+# c['o', 'o', 'o']
+# b['x', 'x', 'o']
+# a['o', 'x', 'o']
 #    1    2    3  x
-x_wert = int(input('x wert Zahl 1-3:\n'))
-y_wert = int(input('y wert Zahl 1-3:\n'))
-zeichen = input('Zeichen:\n')
+
+
+# zahl1 = input('Zahl fuer x')
+# zahl2 = input('Zahl fuer y')
+# zahl1 = int(zahl1)
+# zahl2 = int(zahl2)
+# zeichen = input('zeichen')
+# print('--------------------------')
+# print(tic[0])
+# print(tic[1])
+# print(tic[2])
+# if zahl2 == 'a':
+#     zahl2 = 2
+# elif zahl2 == 'b':
+#     zahl2 = 1
+# elif zahl2 == 'c':
+#     zahl2 = 0
+
+
+# tic[zahl2][zahl1-1] = zeichen
+print('--------------------------')
+print(tic[0])
+print(tic[1])
+print(tic[2])
 # if y_wert == 1:
 #     y_wert = 2
 # elif y_wert == 2:
@@ -64,42 +86,34 @@ zeichen = input('Zeichen:\n')
 #     y_wert = 0
 
 
-tic[y_wert - 1][x_wert - 1] = zeichen
-print('---------------------------------------')
-print(tic[0])
-print(tic[1])
-print(tic[2])
-
 # Beispiel Zahl1 = 3 Zahl2 = 2 Buchstabe = p
 # 1['o', 'o', 'o']
 # 2['x', 'x', 'p']
 # 3['o', 'x', 'o']
 
 # Zähle alle "o" in der mittleren Liste
-zaehler = 0
+tic[1][0] = 'o'
+print('--------------------------')
+print('1',tic[0])
+print(tic[1])
+print(tic[2])
+x = 0
 if tic[1][0] == 'o':
-    zaehler += 1
-if tic[1][1] == 'o':
-    zaehler += 1
-if tic[1][2] == 'o':
-    zaehler += 1
-print(zaehler)
+    x += 1
+if tic[1][1] == "o":
+    x += 1
+if tic[1][2] == "o":
+    x += 1
 
-# Schreib eine If anweisung die 'Sieg' ausgibt wenn das Zeiche auf pos 1.1 das selbe ist wie auf pos 2.2 und 3.3
+print(x)
 
-if tic[0][0] == tic[1][1]:
-    if tic[0][0] == tic[2][2]:
-        print('Sieg')
-else:
-    print('kein Sieg')
+tic[1][0] = 'o'
+tic[1][1] = 'o'
+print('--------------------------')
+print(tic[0])
+print(tic[1])
+print(tic[2])
 
-if tic[0][0] == tic[1][1] and tic[0][0] == tic[2][2]:
-    print('Sieg mit and')
-else:
-    print('kein Sieg mit and')
-
-if tic[2][0] == tic[1][1] and tic[2][0] == tic[0][2]:
-    print('Sieg unten nach oben')
-else:
-    print('kein Sieg')
-
+# Schreib eine If anweisung die 'Sieg' ausgibt wenn das Zeichen auf pos 1.1 das selbe ist wie auf pos 2.2 und 3.3
+if tic[0][0] == tic[1][1] and tic[1][1] == tic[2][2]:
+    print('\033[0;32mSieg')

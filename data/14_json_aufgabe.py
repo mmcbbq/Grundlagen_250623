@@ -18,7 +18,7 @@
 #
 # Setze den domain-name und domain-search auf deine eigene Domain (z.B. meinefirma.local).
 #
-# Bereinigung: Entferne den gesamten Konfigurationsblock "dhcp-ddns".
+# Bereinigung: Entferne den gesamten Konfigurationsblock "dhcp-ddns" "ddns-qualifying-suffix" "ddns-override-client-update".
 #
 # Teil 3: Erweiterung und Global-Settings
 
@@ -32,6 +32,17 @@
 #
 # Interface-Binding: * Passe das globale interfaces-config Array so an, dass es auf ["eth1", "eth2"] lauscht.
 #
-# Stelle sicher, dass Subnetz 1 (10.101) explizit an eth1 gebunden ist.   key value pair "interface" : eht0
+# Stelle sicher, dass Subnetz 1 (10.101) explizit an eth1 gebunden ist.   key value pair "interface" : eht1
 #
-# Stelle sicher, dass Subnetz 2 (192.168) explizit an eth2 gebunden ist. key value pair "interface" : eht1
+# Stelle sicher, dass Subnetz 2 (192.168) explizit an eth2 gebunden ist. key value pair "interface" : eht2
+
+import json
+from pprint import pprint
+
+with open('kea-dhcp4.json') as line:
+    conf = json.load(line)
+
+# Hier kommt der code
+
+with open('"name-hier"_kea.json', 'w') as f:
+    f.write(json.dumps(conf))
