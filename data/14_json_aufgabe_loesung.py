@@ -1,52 +1,83 @@
-
-
-# Szenario: Du hast eine bestehende kea-dhcp4.json. Bearbeite die Datei gemäß den folgenden Anweisungen.
-#
-# Teil 1: Analyse (Read-only)
-# Lifetime: Ermittle den Wert für die valid-lifetime.
-#
-# Inventur: Wie viele subnet4-Blöcke sind aktuell konfiguriert?
-#
-# Identifikation: Welche id hat das erste Subnetz im Array?
-#
-# Teil 2: Modifikation des ersten Subnetzes
-# Netzwerk: Ändere das Subnetz des ersten Eintrags auf 10.101.101.0/24.
-#
-# Address-Pools: Passe die pools so an, dass sie innerhalb des neuen Subnetzes liegen (z. B. .10 bis .100).
-#
-#
-#
-# Standard-Optionen: * Ändere die IP-Adresse des routers und der domain-name-servers passend zum neuen Subnetz.
-#
-# Setze den domain-name und domain-search auf deine eigene Domain (z.B. meinefirma.local).
-#
-# Bereinigung: Entferne den gesamten Konfigurationsblock "dhcp-ddns".
-#
-# Teil 3: Erweiterung und Global-Settings
-
-# Neues Subnetz anlegen: Füge ein zweites Subnetz-Objekt mit folgenden Daten hinzu:
-#
-# id: 2
-#
-# subnet: 192.168.0.0/24
-#
-# pools: 192.168.0.10 - 192.168.0.100
-#
-# Interface-Binding: * Passe das globale interfaces-config Array so an, dass es auf ["eth1", "eth2"] lauscht.
-#
-# Stelle sicher, dass Subnetz 1 (10.101) explizit an eth1 gebunden ist.   key value pair "interface" : eht0
-#
-# Stelle sicher, dass Subnetz 2 (192.168) explizit an eth2 gebunden ist. key value pair "interface" : eht1
-
 import json
+from pprint import pprint
+
 with open('kea-dhcp4.json') as line:
     conf = json.load(line)
 
+pprint(conf)
 
-#Hier kommt der Code
+print("Lifetime: Ermittle den Wert für die valid-lifetime.")
+print(conf['Dhcp4']['valid-lifetime'])
+
+print('Wie viele subnet4-Blöcke sind aktuell konfiguriert?')
+print(len(conf['Dhcp4']['subnet4']))
+
+print('Welche id hat das erste Subnetz im Array?')
+print(conf['Dhcp4']['subnet4'][0]['id'])
+
+print('Welche id hat das erste Subnetz im Array?')
+print(conf['Dhcp4']['subnet4'][0]['id'])
+
+print('Netzwerk: Ändere das Subnetz des ersten Eintrags auf 10.101.101.0/24.')
+conf['Dhcp4']['subnet4'][0]['subnet'] = '10.101.101.0/24'
+print(conf['Dhcp4']['subnet4'][0]['subnet'])
+
+print('Address-Pools: Passe die pools so an, dass sie innerhalb des neuen Subnetzes liegen (z. B. .10 bis .100).')
+conf['Dhcp4']['subnet4'][0]['pools'][0]['pool'] = '10.101.101.10-10.101.101.100'
+print(conf['Dhcp4']['subnet4'][0]['pools'][0]['pool'])
+
+print('Ändere die IP-Adresse des routers')
+conf['Dhcp4']['subnet4'][0]['option-data'][0]['data'] = '10.101.101.254'
+print((conf['Dhcp4']['subnet4'][0]['option-data'][0]))
+
+print('change domain-name-servers')
+conf['Dhcp4']['subnet4'][0]['option-data'][1]['data'] = '10.101.101.254'
+print((conf['Dhcp4']['subnet4'][0]['option-data'][1]))
+
+print('change domain-name')
+conf['Dhcp4']['subnet4'][0]['option-data'][2]['data'] = 'manuel-linux.zz'
+print((conf['Dhcp4']['subnet4'][0]['option-data'][2]))
+
+print('change domain-search')
+conf['Dhcp4']['subnet4'][0]['option-data'][3]['data'] = 'manuel-linux.zz'
+print((conf['Dhcp4']['subnet4'][0]['option-data'][3]))
+
+print("remove dhcp-ddns ddns-override-client-update ddns-qualifying-suffix")
+conf['Dhcp4'].pop('dhcp-ddns')
+conf['Dhcp4'].pop('ddns-override-client-update')
+conf['Dhcp4'].pop('ddns-qualifying-suffix')
+pprint(conf)
+
+print('Neues Subnetz anlegen')
+
+sub2 = {} # erstellen des Dictionary
+sub2['id'] = 2 # hinzufuegen des key value paars id 2
+sub2['subnet'] = '192.168.0.0/24' # hinzufuegen des key value paars subnet 192...
+
+sub2['pools'] = [] # hinzufuegen des key pools der value ist ein leere Liste
+
+pool = {'pool': '192.168.0.10 - 192.168.0.100'} # erstellen des dict fuer die Liste
+
+sub2['pools'].append(pool) # anhaengen des dict von zeile 59 in die leere liste zeile 57
 
 
+conf['Dhcp4']['subnet4'].append(sub2) #alles in die conf anfuegen
+# Hier kommt der Code
+pprint(conf['Dhcp4']['subnet4'])
 
-with open('manuel_kea.json','w') as f:
+print('Interface ["eth1", "eth2"]')
+conf['Dhcp4']['interfaces-config']['interfaces'].clear()
+conf['Dhcp4']['interfaces-config']['interfaces'].append('eth1')
+conf['Dhcp4']['interfaces-config']['interfaces'].append('eth2')
+print(conf['Dhcp4']['interfaces-config']['interfaces'])
+
+print('set interface for pools')
+
+conf['Dhcp4']['subnet4'][0]["interface"] = 'eth1'
+print(conf['Dhcp4']['subnet4'][0])
+
+conf['Dhcp4']['subnet4'][1]["interface"] = 'eth2'
+print(conf['Dhcp4']['subnet4'][1])
+
+with open('manuel_kea.json', 'w') as f:
     f.write(json.dumps(conf))
-
