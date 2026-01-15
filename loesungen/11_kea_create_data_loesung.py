@@ -14,7 +14,7 @@ names = [
     "Yanwolf",
     "Jason",
     "Edwin",
-    "manuel"
+    "Manuel"
 ]
 
 # Erstellen sie eine Liste mit Dictionaries fuer jeden Namen
