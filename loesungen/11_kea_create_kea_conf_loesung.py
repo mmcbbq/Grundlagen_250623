@@ -1,12 +1,12 @@
 # Erstelle mit den erstellten daten eine Kea-dhcp4.conf datei
 import json
 
+
 with open('../data/kea-dhcp4.json') as kea_file:
     conf = json.load(kea_file)
 
 with open('../data/manuel-network-data.json') as network_f:
     net_data = json.load(network_f)
-
 # Es soll auf interface eth0
 
 print(conf['Dhcp4']['subnet4'][0])
@@ -27,7 +27,7 @@ for teilnehmer in net_data:
 
     sub_dic = {}
     sub_dic['id'] = i
-    sub_dic['subnet'] = teilnehmer['subnet']
+    sub_dic['subnet'] = teilnehmer['subnet']+'/24'
     sub_dic['relay'] = {"ip-addresses": [relay]}
 
     sub_dic['pools'] = []

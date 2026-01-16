@@ -13,10 +13,15 @@ for x in data:
         f.write(f'{sp *1}version: 2\n')
         f.write(f'{sp *1}ethernets:\n')
         f.write(f'{sp *2}eth0:\n')
-        f.write(f'{sp *3}addresses: [{bbq_net}/24]\n')
+        f.write(f'{sp *3}addresses: [{bbq_net}/20]\n')
+        f.write(f'{sp *3}nameservers:\n')
+        f.write(f'{sp *4}addresses: [8.8.8.8,1.1.1.1]\n')
+
+
+
         f.write(f'{sp *3}routes:\n')
         f.write(f'{sp *4}- to: default\n')
-        f.write(f'{sp *5}via: 172.16.98.254\n')
+        f.write(f'{sp *5}via: 172.16.100.254\n')
         for route in data:
             r_name = route['name'].lower()
             r_bbq_net = route['agent_ip']
