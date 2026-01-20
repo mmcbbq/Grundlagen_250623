@@ -9,23 +9,23 @@ print(zahlenreihenfolge)
 zahlenreihenfolge = list(range(2, 11, 2))  # Bei 3. Argumenten start stop und schrittweite -> 2, 4, 6, 8, 10
 print(zahlenreihenfolge)
 
-cd = list(range(10, -1, -1))  # Es können auch negative Argumente übergeben werden um Rückwärts zu Zählen
-print(cd)
+counter = list(range(10, -1, -1))  # Es können auch negative Argumente übergeben werden um Rückwärts zu Zählen
+print(counter)
 
 for x in range(10):
     print(x)
-
+#
 #     (start,    stop,    schrittweite)
-# for (cd = 10 ; cd < 0 ; cd --){  <-- Schleifenkopf
+# for (int cd = 0 ; cd < 10 ; cd++ ){  <-- Schleifenkopf
 # Schleifenkörper
 # }
 
-
-for cd in range(10, -1, -1):
-    if cd == 0:
+for counter in range(10, -1, -1):
+    if counter == 0:
         print('Happy new year')
     else:
-        print(cd)
+        print(counter)
+
 
 z = 0
 for x in range(101):
