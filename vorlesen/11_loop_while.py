@@ -3,15 +3,15 @@
 # wie eine bestimmte Bedingung wahr ist.
 # Die allgemeine Syntax lautet:
 # while Bedingung:
-#Code
+# Code
 # Vorsicht vor Endlosen Schleifen !!!!
 #
 # Es ist wichtig, sicherzustellen,
 # dass die Bedingung in der while-Schleife irgendwann False wird.
 # Andernfalls wird die Schleife endlos weiterlaufen,
-# was zu einem Programmabsturz oder einer schlechten Leistung führen kann
-while True:
-    print('Endlose Schleife')
+# # was zu einem Programmabsturz oder einer schlechten Leistung führen kann
+# while True:
+#     print('Endlose Schleife')
 
 # while mit Zähler
 n = 10
@@ -36,6 +36,7 @@ while x > 0:
 
 # continue stop den Schleifendurchlauf und springt in den den Schleifenkopf
 print('continue Schleife')
+x = 25
 while x > 0:
     x -= 1
     if x == 10:
