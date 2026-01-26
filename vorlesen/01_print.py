@@ -5,8 +5,6 @@
 # Man schreibt den funktionsnamen gefolgt von Klammer auf klammer zu "()"
 print()
 
-
-
 # Zwischen den Klammern kann man nun Argumente übergeben.
 
 print('Hello World!')
