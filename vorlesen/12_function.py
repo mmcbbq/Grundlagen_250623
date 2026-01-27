@@ -58,7 +58,7 @@ sag_hallo()  # Der Funktionsaufruf erfolgt über den Namen der Funktion mit ()
 
 
 # Funktionen müssen vor dem Aufruf definiert werden.
-# my_func() -> NameError: name 'my_func' is not defined
+# my_func()
 #
 # def my_func():
 # 	print('my_func')
@@ -94,6 +94,10 @@ def my_sum(a: str, b: int) -> None:
 # a = 8 b = 9
 my_sum(8, 9)
 
+def my_sum_return(a, b):
+    summe = a + b
+    return summe
+
 
 # Funktionen können Rückgabewerte enthalten. return value.
 def my_sum_return(a, b):
@@ -101,15 +105,18 @@ def my_sum_return(a, b):
     return summe
 
 
+
+
 # Diese return values werden bei dem Ausführen des Programmes an die Stelle gesetzt an dem die Funktion aufgerufen wird
 
-var_my = my_sum_return(my_sum_return(1,2), 10)  # ->18
-# var_my = 18
+var_my = my_sum_return(my_sum_return(1,2), 10)  # ->13
+# var_my = 13
 print(var_my)
 
 
 def my_string():
     return 'Hallo'
+
 
 
 # Return values haben dieselben eigenschaften wie die Datentypen die sie repräsentieren
@@ -157,6 +164,7 @@ print(bigger(mal_5(z1), z2))
 
 def no_return():
     test = 5 * 20
+
 
 
 print(no_return())  # -> None
@@ -236,7 +244,8 @@ def keineplan(*viele_oder_eins, key) -> str:
     print(type(viele_oder_eins))
     print(viele_oder_eins)
     print(key)
+    for x in viele_oder_eins:
+        print(x)
     return "test"
 
 
-keineplan(1, 2, 3, 4, "test", 9, key=12)
